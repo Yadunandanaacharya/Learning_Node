@@ -1,0 +1,7 @@
+package.json file keeps track of package we install
+We'll use "npm init" in command prompt.
+It'll ask series of options to enter, finally a package.json file will be created.
+
+It keeps tracks of dependencies.    
+using nodemon
+npm install -g nodemon

@@ -1,0 +1,36 @@
+npm install express to install express.
+
+Easy and flexible routing system.
+Integrates with many templating engines.
+Contains a middleware framework.
+
+HTTP methods: Are kind of requests we make.
+Get, Post, Delete, Put.
+Get: We make when we type an url in address bar.
+Post: When we post some data to server.
+
+Get: app.get('route',fn)
+Post: app.Post('route',fn)
+Delete: app.Delete('route',fn)
+
+How to use nodemon
+npm install nodemon
+Install nodemon inside this directory, if you install outside
+like in windows commandprompt, you can not use it efficiently.
+
+npm i nodemon --save-dev 
+saves as in dependency
+Inside package.json press Ctrl+F to search nodemon, you'll see
+version installed
+
+WHEN YOU EXECUTE nodemon app.js in commandprompt
+ypu'll get error because windows doesnot gives you to execeute 
+unkknown files.
+https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system
+
+Go to windows prompt admin do as in above link provided.
+Set-ExecutionPolicy RemoteSigned
+above code to give access to execute file.
+When you are done, you can set the policy back to its default value with:
+
+Set-ExecutionPolicy Restricted
