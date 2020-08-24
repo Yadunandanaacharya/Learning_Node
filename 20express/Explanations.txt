@@ -1,3 +1,21 @@
+Callback function writing after 
+app.listen(3000,()=>{
+    console.log('Hi)
+})
+is very important.
+
+if your some libraries likee express doesn't work then delete package-lock.json completely,
+after reinstall every packages.
+
+IF YOU FACE USING EXPRESS, JUST REMOVE NODE JS->UNINSTALL
+AND IN  C:\Users\yadua\AppData\Roaming PATH NPM AND NPM-CACHE WILL BE THERE
+DELETE THEM ALSO LATER INSTALL 
+EXPRESS AND NODEMON GLOBALLY
+
+npm install -g express-generator
+
+npm install -g nodemon
+
 npm install express to install express.
 
 Easy and flexible routing system.
