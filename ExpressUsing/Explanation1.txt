@@ -1,0 +1,24 @@
+First creating package.json file using npm init.
+
+Always change yoyr current directory to ExpressUsing folder, in this folder
+itself installl all packages.
+
+var app = express  using express method we are creating instance called app.
+
+""""var express = require('express');
+
+var app = express();
+
+// app is variable, which will make listen to express
+
+app.listen(3000,function(){
+    console.log('Listening')""""
+
+for above code when you will run them in browser, you'll get response
+as 
+""cannot GET/""
+where GEt is default method express is going to use.
+
+4 types of requests get post put delete.
+
+for string like this no need to mention content-type

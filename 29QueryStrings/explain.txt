@@ -1,0 +1,11 @@
+Additional data added onto http request, in the form name value pairs.
+
+Example: mysite.com/blog/news?page=2
+
+Second page of news item in the blog.
+page = 2 is attached to get request.    
+
+Way of creating "Query string" is by adding "?" mark
+
+mysite.com/contact?person=yadu&dept=marketing
+Using ? and & inside this name value pair is there with = symbol

@@ -1,0 +1,89 @@
+Here using ejs we can transfer html files to browser
+
+Using sendFile code you will send html file to browser.
+
+Way to use ejs:
+We need to use or set "view engine" property of ejs to express app.
+
+app.set('view engine','ejs')
+
+Here name of the engine is ejs, propert is view engine value is ejs.
+
+"By default when express will see engine ejs as 'view engine', it looks in the 
+directory called "view", for the ejs files, so we will create a directory or 
+folder called view inside the "ExpreeUsing" folder ". And inside 
+view folder all .ejs files will go.
+
+'/student/:id' Whenever some id is passed to the student then his name is returned to the broser, in here we're not
+gonna use same route instead we are gonna transfer data to the html file and inject "students[req.params.name]"
+this parameter to the html file and then present it to the client.
+
+I have cretaed student1.ejs file inside the view folder
+
+So in index3Templateengine.js file instead of writing
+res.send('You have requested for student id: '+students[req.params.name])
+we will  write res.render and pass 2 arguments.
+1st parameter is filename that is "student1" and 2nd parameter is object
+where object is key: value pair. Here will pass "name" as keybecause 
+it's student's name and value is '+students[req.params.name])
+
+Adding name in student1.ejs file you can visit "embeddedjs.com"
+<h1> <%= title %> </h1>
+
+
+Important:::
+When you execute your file with naming ejs folder as "view" you will get error:
+
+"Error: Failed to lookup view "student1" in views directory "D:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\views"
+    at Function.render (d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\application.js:580:17)
+    at ServerResponse.render (d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\response.js:1012:7)
+    at d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\index3TemplateEngines.js:36:8
+    at Layer.handle [as handle_request] (d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\router\layer.js:95:5)
+    at next (d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\router\layer.js:95:5)
+    at d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\router\index.js:281:22
+    at param (d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\router\index.js:354:14)
+    at param (d:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\node_modules\express\lib\router\index.js:365:14)"
+
+
+Because you can't name ejs folder as "view" you need to name only
+as "views"
+
+After changing it will display html file as
+"Hi, All the best.
+ram
+Using ejs files inside the view folder."
+
+Which is content of student1.ejs folder.
+
+    <!-- <p>id  <%= id %></p> -->
+
+
+code:
+
+app.get('/student1/:name',(req,res)=>{
+   res.render('student1',{name : students[req.params.name]})
+});
+
+<h1>You have requested the student name:<%= name %> </h1>
+
+http://localhost:3000/student1/2
+
+Output:Hi, All the best.
+You have requested the student name:sham
+Using ejs files inside the view folder.
+
+Now adding <p>id  <%= id %></p> to .ejs file
+Now we are requesting id from json object students
+
+app.get('/student1/:id',(req,res)=>{
+   res.render('student1',{name : students[req.params.id],id:req.params.id})
+});
+
+http://localhost:3000/student1/2
+Output:
+Hi, All the best.
+You have requested the student name:sham
+id 2
+Using ejs files inside the view folder.

@@ -1,0 +1,22 @@
+Using for loop
+We have data structure called students.
+
+We won't have this kind of small data structure in real time in complex database
+we will have Sir name, marks, etc..
+
+var students = {
+    1 : {
+        name : 'Ram',
+        subjects : ['C++', 'Java', 'Python']
+    },
+    2 : {
+        name : 'Sham',
+        subjects : ['C++',  'Python']
+    },
+    3 : {
+        name : 'Bham',
+        subjects : ['C++', 'Java', 'Python', 'Scala']
+    }
+}
+How to show above data structure to client? We can use
+render method and injecting to html file in ejs file

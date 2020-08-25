@@ -1,0 +1,36 @@
+Parse parameters and pass parameters in the url routes using express
+
+If you want to use student data using studen's ID or roll number
+Ex: localhost:3000/student/1
+
+Student 1's data shold be fetched.
+
+(req,res)=>{ is Arrow function.
+
+"""app.get('/student/:id',(req,res)=>{
+   res.send('You have requested for student id '+ req.params.id)
+});"""
+
+Using express we can do like above, using res.send and req.params.id
+
+If you get message "Cannot GET student"" then there is some spelling mistake
+with student in code and browser.
+
+You can also pass name here.
+
+Using dictionary and access data of it.
+var students = {
+    name : 'ram',
+    marks : 67,
+    height : 6
+}
+
+students is kind of array.
+
+app.get('/students/:name',(req,res)=>{
+   res.send('You have requested for student id: '+ student[req.params.name])
+});
+
+so calling key with array: student[req.params.name]
+
+Output will be: You have requested for student id: ram
