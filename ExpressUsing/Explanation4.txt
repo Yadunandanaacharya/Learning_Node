@@ -20,3 +20,29 @@ var students = {
 }
 How to show above data structure to client? We can use
 render method and injecting to html file in ejs file
+
+subjects:students[req.params.id].subjects This will be sent as an array
+to the client, student2.ejs file has to pass it and show thr output
+
+IMPORTANT ERROR:  <li><% =item %></li>
+Don't type = equal symbol like this you'll get error
+
+SyntaxError: Unexpected token '=' in D:\GITHUB_REPO_donot_add_delete\Learning_Node\ExpressUsing\views\student2.ejs while compiling ejs
+
+There should not be <li><%=item %></li> this one is okay.
+<li><%= item %></li> this one is preferred.
+
+I have used arrow function we can also use normal function.
+
+<% subjects.forEach((item)=>{ %>
+            <li><%=item %></li>
+       <% }); %>
+
+normal function:
+<% subjects.forEach(function(item){ %>
+            <li><%=item %></li>
+       <% }); %>
+
+
+
+http://localhost:3000/studentsare/2

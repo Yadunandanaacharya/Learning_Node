@@ -34,13 +34,15 @@ app.get('/contact',function(req,res){
 
 
 //Helps to fetch data from database with respect to id.
-app.get('/profile/:name',function(req,res){
-    res.render('profile',{person: req.params.name})
+app.get('/profileis/:name',function(req,res){
+    res.render('profile',{name:req.params.name})
 });
 
-app.get('/this', function(req, res){ 
- 	res.render('index',{user: "Great User",title:"homepage"});
-});
+// Inside render you'll pass json string
+
+// app.get('/this', function(req, res){ 
+//  	res.render('index',{user: "Great User",title:"homepage"});
+// });
 
 
 //Important don't use any strings inside "res.send" your output won't display

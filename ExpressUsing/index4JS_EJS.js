@@ -15,25 +15,28 @@ app.get('/contact',(req,res )=>{
 var students = {
     1 : {
         name : 'Ram',
-        subjects : ['C++', 'Java', 'Python']
+        subjects : ['Simple linear regression+', 'Multiple linear', 'Neural networks']
     },
     2 : {
         name : 'Sham',
-        subjects : ['C++',  'Python']
+        subjects : ['Chemistry',  'Physics']
     },
     3 : {
         name : 'Bham',
-        subjects : ['C++', 'Java', 'Python', 'Scala']
+        subjects : ['Maths', 'Biology', 'Python', 'Hadoop']
     }
 }
 
 
-app.get('/student1/:id',(req,res)=>{
-   res.render('student1',{name : students[req.params.id].name ,id:req.params.id,
-subjects:students[req.params.id].subjects })
+app.get('/studentsare/:id',(req,res)=>{
+   res.render('student2',{name : students[req.params.id].name ,id:req.params.id,
+    subjects : students[req.params.id].subjects
+ })
 });
 
 
 app.listen(3000,function(){
     console.log('Listening')
 })
+
+
